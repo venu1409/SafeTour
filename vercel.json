@@ -1,11 +1,13 @@
 {
   "services": {
     "frontend": {
+      "root": "frontend",
       "buildCommand": "npm install && npm run build",
       "outputDirectory": "dist",
       "framework": "vite"
     },
     "backend": {
+      "root": "backend",
       "runtime": "python3.12"
     }
   },
