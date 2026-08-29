@@ -1,0 +1,28 @@
+{
+  "services": {
+    "frontend": {
+      "buildCommand": "npm install && npm run build",
+      "outputDirectory": "dist",
+      "framework": "vite"
+    },
+    "backend": {
+      "runtime": "python3.12"
+    }
+  },
+  "routes": [
+    {
+      "src": "/api/(.*)",
+      "destination": {
+        "type": "service",
+        "service": "backend"
+      }
+    },
+    {
+      "src": "/(.*)",
+      "destination": {
+        "type": "service",
+        "service": "frontend"
+      }
+    }
+  ]
+}
